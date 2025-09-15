@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%  block content %}
+<head>
+    <title>Home - SterLearning</title>
+</head>
+<div class="container text-center" style="padding: 100px; padding-top: 150px;">
+    <h1 class="display-1">SterLearning</h1>
+    <hr></hr>
+    <h2 class="pb-5">Welcome to SterLearning - the perfect place to learn about personal finance</h2>
+    {% if user.is_authenticated %}
+        <a href="{% url 'index' %}" class="btn btn-primary h3">View Account</a>
+    {% else %}
+    <a href="{% url 'login' %}" class="btn btn-primary h3">Log In</a> or <a href="{% url 'signup-user' %}" class="btn btn-primary h3">Sign Up</a>
+    {% endif %}
+</div>
+{% endblock %}
