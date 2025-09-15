@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Mortgage Calculator Tool</title>
+</head>
+
+<div style="padding: 30px; display:inline-block; vertical-align:top;">
+    <form action = "" method = "GET">
+
+        <h1>Mortgage Calculator</h1>
+        <h6>Fill out the fields below to find out how paying back your mortgage would work.</h6>
+        <p>
+        Loan Amount: £{{form.loan_amount}}
+        <br>
+        or
+        <br>
+        Home Value: £{{form.home_value}}<br>
+        Downpayment: £{{form.downpayment}}
+        <br><br>
+        Interest rate: {{form.interest_rate}}%
+        </p>
+        <h4>optional fields:</h4>
+        Duration of loan, in years: {{form.duration_years}} (defaults to 30 years)<br>
+        Monthly Homeowners' Association (HOA) fees: £{{form.monthly_hoa}}<br>
+        Annual property tax: £{{form.annual_property_tax}}<br>
+        Annual home insurance: £{{form.annual_home_insurance}}<br>
+        <br><br>
+        <input type="submit" value=Submit>
+
+    </form>
+</div>
+{% if error %}
+<div style="padding: 30px; display:inline-block;vertical-align:top;">
+    <h3>Error:</h3>
+    {{ errorcode }}: {{ error.error }}
+</div>
+{% endif %}
+{% if results %}
+<div style="padding: 30px; display:inline-block;vertical-align:top;">
+    <h2>Monthly Payment Plan:</h2>
+    <h6>Total payment per month: £{{results.monthly_payment.total}}<br></h6>
+    <h5>Breakdown:</h5>
+    &nbsp;  Mortgage: £{{results.monthly_payment.mortgage}} <br>
+    &nbsp;  Property tax: £{{results.monthly_payment.property_tax}} <br>
+    &nbsp;  HOA: £{{results.monthly_payment.hoa}} <br>
+    &nbsp;  Home insurance: £{{results.monthly_payment.annual_home_ins}} per year<br>
+    <br>
+    <h2>Annual Payment Plan:</h2>
+    <h6>Total payment per year: £{{results.annual_payment.total}}<br></h6>
+    <h5>Breakdown: </h5>
+    &nbsp;  Mortgage: £{{results.monthly_payment.mortgage}} <br>
+    &nbsp;  Property tax: £{{results.monthly_payment.property_tax}} <br>
+    &nbsp;  HOA: £{{results.monthly_payment.hoa}} <br>
+    &nbsp;  Home insurance: £{{results.monthly_payment.annual_home_ins}} <br>
+    <br>
+    <h5> Total Interest Paid: </h5>
+    £{{results.total_interest_paid}}
+</div>
+{% endif %}
+
+<style>
+    input[type=number] {
+        border: none;
+        border-bottom: 2px solid black;
+    }
+    input[type=number]:focus {
+        border: 1px solid black;
+    }
+</style>
+
+{% endblock content %}

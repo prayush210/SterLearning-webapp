@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{%  block content %}
+<head>
+    <title>Friends</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'friends.css' %}">
+</head>
+<body>
+    <div class="container">
+
+        <div class="wrapper">
+            <h1>Friends</h1>
+            <div class="list-group-item-custom">
+                {% for user in friends %}
+                    <li class="list-group-item">
+                        {{ user.username }}
+                            <a href="{% url 'remove-friend' user.id %}">
+                                <button class="btn btn-dark" style="float:right;">Remove Friend</button>
+                            </a>
+                    </li>
+                {% endfor %}
+            </div>
+
+            
+            <h1>Friend Requests</h1>
+                <h3>Sent:</h3>
+                    <div class="list-group-item-custom"> 
+                    {% for request in sent_requests %}
+                        <li class="list-group-item">{{ request.sent_to.username }}</li>
+                    {% endfor %}
+                    </div>
+                <h3>Received:</h3>
+                <div class="list-group-item-custom"> 
+                    {% for request in received_requests %}
+                        <li class="list-group-item">
+                            {{ request.sent_from.username }}
+                            <a href="{% url 'accept-friend-request' request.sent_from.id %}">
+                                <button class="btn btn-dark" style="float:right;">Add Friend</button></a>
+                            <a href="{% url 'deny-friend-request' request.sent_from.id %}">
+                                <button class="btn btn-dark" style="float:right;">Deny Request</button></a>
+                        </li>
+                    {% endfor %}
+                </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <h1>Other Users</h1>
+            <div class="list-group-item-custom"> 
+            {% for user in users %}
+                {% if user != request.user %}
+                    {% if user not in friends %}
+                        <li class="list-group-item">
+                            {{ user.username }}
+                            <a href="{% url 'send-friend-request' user.id %}">
+                                <button class="btn btn-dark" style="float:right;">Send Friend Request</button></a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+{% endblock %}

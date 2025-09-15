@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{%  block content %}
+<head>
+    <title>Settings Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'accountpage.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Profile Settings:</h1>
+            <div class="list-group list-group-item-custom">
+                <a class="list-group-item" href="{% url 'change-username' %}">Change Username</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

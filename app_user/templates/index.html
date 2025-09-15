@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{%  block content %}
+<head>
+    <title>Account Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'accountpage.css' %}">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+
+                <div class="list-group list-group-item-custom">
+
+                {% if user.is_authenticated %}
+                    <div id="accImage">
+                            {% if user.avatar %}
+                                <li class="list-group-item list-group-item-dark"><img src="{{user.avatar.image.url}}" alt="profileImg">
+                            {% else %}
+                                <li class="list-group-item list-group-item-dark"><img src="{% static 'person-fill.svg' %}" alt="profileImg" style="filter: invert()">
+                            {% endif %}
+                        {{user.username}}</li>
+                    </div>
+                    <a class="list-group-item" href="{% url 'friends' %}" class="list-group-item list-group-item-action">Friends</a></li>
+                    <a class="list-group-item" href="{% url 'settings' %}" class="list-group-item list-group-item-action" >Settings</a></li>
+                    <a class="list-group-item" href="{% url 'logout' %} " class="list-group-item list-group-item-action">Logout</a> </li>
+                    
+                {% else %}
+                    <li> <a href="{% url 'login' %}">Login</a> </li>
+                    <li> <a href="{% url 'signup-user' %}">Signup</a> </li>
+                    <div id="g_id_onload"
+                        data-client_id="385254237271-qsm2re5si8iskcuqlu14b1rr09jd5oha.apps.googleusercontent.com"
+                        data-context="signin"
+                        data-ux_mode="redirect"
+                        data-login_uri="{% url 'auth-receiver' %}"
+                        data-itp_support="true">
+                    </div>
+
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="rectangular"
+                        data-theme="outline"
+                        data-text="signin_with"
+                        data-size="large"
+                        data-logo_alignment="left">
+                    </div>
+                {% endif%}
+                </div>
+        </div>
+
+    </div>
+</body>
+{% endblock %}

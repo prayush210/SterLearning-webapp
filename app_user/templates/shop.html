@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Shop</title>
+</head>
+
+<div class="container" style="padding: 100px; padding-top: 25px;">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" style="margin: 1rem;">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    <div class="d-flex justify-content-between">
+        <h1>Shop</h1>
+        <div class="p-3 rounded" style="background-color: #11101D; color: white;">{{ points }}<i class="bi bi-cash-stack" style="padding-left: 10px"></i></div>
+    </div>
+    <hr>
+    {% if avatars|length < 1 and decorations|length < 1 %}
+    <p class="text-center p-4">You own everything in the store, nice work!</p>
+    {% else %}
+    <div class="d-flex justify-content-center flex-wrap">
+        {% for avatar in avatars %}
+            <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+                <img src="{{ avatar.image.url }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ avatar.name }}</h5>
+                    <form method="POST" action="{% url 'shop' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="type" value="buy_avatar">
+                        <input type="hidden" name="id" value="{{ avatar.id }}">
+                        <button type="submit" class="btn rounded p-2 mt-2" style="background-color: #11101D; color: white; outline: none;">Purchase for {{ avatar.cost }}<i class="bi bi-cash-stack" style="padding-left: 5px;"></i></button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+        {% for decoration in decorations %}
+        <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+            <img src="{{ decoration.image.url }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ decoration.name }}</h5>
+                <form method="POST" action="{% url 'shop' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="buy_decoration">
+                    <input type="hidden" name="id" value="{{ decoration.id }}">
+                    <button type="submit" class="btn rounded p-2 mt-2" style="background-color: #11101D; color: white; outline: none;">Purchase for {{ decoration.cost }}<i class="bi bi-cash-stack" style="padding-left: 5px;"></i></button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <h1 style="padding-top: 50px;">Inventory</h1>
+    <hr>
+    {% if owned_avatars|length < 1 and owned_decorations|length < 1 %}
+    <p class="text-center p-4">You don't own any items yet... :(</p>
+    {% else %}
+    <div class="d-flex justify-content-center flex-wrap">
+    {% for avatar in owned_avatars %}
+        {% if avatar.id == equipped_avatar.id %}
+        <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+            <img src="{{ avatar.image.url }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ avatar.name }}</h5>
+                <button class="btn rounded p-2 mt-2 disabled" style="background-color: #11101D; color: white; outline: none;">Equipped</button>
+            </div>
+        </div>
+        {% else %}
+        <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+            <img src="{{ avatar.image.url }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ avatar.name }}</h5>
+                <form method="POST" action="{% url 'shop' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="equip_avatar">
+                    <input type="hidden" name="id" value="{{ avatar.id }}">
+                    <button type="submit" class="btn rounded p-2 mt-2" style="background-color: #11101D; color: white; outline: none;">Equip Avatar</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% for decoration in owned_decorations %}
+    {% if decoration.id == equipped_decoration.id %}
+    <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+        <img src="{{ decoration.image.url }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{ decoration.name }}</h5>
+            <button class="btn rounded p-2 mt-2 disabled" style="background-color: #11101D; color: white; outline: none;">Equipped</button>
+        </div>
+    </div>
+    {% else %}
+    <div class="card m-2 text-center shadow-sm" style="width: 16rem;">
+        <img src="{{ decoration.image.url }}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{ decoration.name }}</h5>
+            <form method="POST" action="{% url 'shop' %}">
+                {% csrf_token %}
+                <input type="hidden" name="type" value="equip_decoration">
+                <input type="hidden" name="id" value="{{ decoration.id }}">
+                <button type="submit" class="btn rounded p-2 mt-2" style="background-color: #11101D; color: white; outline: none;">Equip Decoration</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
