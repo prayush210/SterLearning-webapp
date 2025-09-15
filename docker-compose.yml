@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    image: sterlearning
+    volumes:
+      - .:/COM2027/Group1
+    command: bash -c "python manage.py migrate && python manage.py seed && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
