@@ -47,9 +47,3 @@ git switch 2-create-skeleton-code
 ```
 (To use the remote branch `2-create-skeleton-code`)
 
-
-## Best Practices
-
-When writing code for this project, you should always adhere to DRY (Don't Repeat Yourself) and follow the [PEP8](ttps://peps.python.org/pep-0008/) style guide. The style guide will be enforced by a linter (pylint) as part of the pipeline. *Spaces* should always be used in favour of *tab* for indentation, as outlined in the style guide. Python **does not** allow mixing of tabs and spaces for indentation. Your code should be well commented to make it easier for another team member to work with in the future.
-
-When writing code, notes should be taken for use later in the writing of the FAR.
