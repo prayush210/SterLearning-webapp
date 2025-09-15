@@ -1,0 +1,76 @@
+{
+    "name": "State, Workplace, and Personal Pensions",
+    "description": "Further information about the different types of pensions available, and how they work.",
+    "pathway": "PENSION",
+    "sections": [
+        { "info": [
+            {
+            "type": "Information",
+            "title": "State Pensions",
+            "position": 1,
+            "content": "State pensions are available to be taken out at age 66, for both men and women. They are paid to you by the government, based on the how long you’ve been contributing to National Insurance.\n\nTo gain the full amount, you need to have been paying National Insurance for 35 years. If you have been paying for 10-34 years, you will receive a fraction of the full amount based on the number of years."
+            },
+            {
+                "type": "Information",
+                "title": "Workplace Pensions",
+                "position": 3,
+                "content": "Every time you start a new job, as long as you are over 22 and earning more than £10,000 per year, your employer will open a new pension for you.\n\nYour employer will set a percentage of your salary to be paid straight into the pension. They will also either match this amount, or a percentage of it, to also be paid in. You can usually discuss and set this amount with your employer."
+            },
+            {
+                "type": "Information",
+                "title": "Personal Pensions",
+                "position": 5,
+                "content": "You can also open your own pension separately from the government or your employer, and choose how much you pay in + how often. \n\nThey are useful for people who are self-employed, or who want to consolidate multiple workplace pensions into one"
+            }
+        ]},
+        { "questions": [
+            {
+                "type": "Multiple Choice",
+                "question": "How old do you have to be to take out your State Pension?",
+                "position": 2,
+                "points": 10,
+                "options": [
+
+                    "64",
+                    "65",
+                    "66",
+                    "67"
+                ],
+                "correct_option": "66"
+            },
+            {
+                "type": "Multiple Choice",
+                "question": "Where does the money paid into your workplace pension come from?",
+                "position": 4,
+                "points": 10,
+                "options": [
+
+                    "Your salary",
+                    "Your employer",
+                    "Both"
+                ],
+                "correct_option": "Both"
+            },
+            {
+                "type": "Fill in the Blank",
+                "question": "Who are personal pensions useful for?",
+                "position": 6,
+                "before": "For people who are ",
+                "blank": "self-employed",
+                "after": ".",
+                "points": 10
+
+            },
+            {
+                "type": "Fill in the Blank",
+                "question": "Why are personal pensions useful?",
+                "position": 7,
+                "before": "For combining multiple ",
+                "blank": "workplace",
+                "after": " pensions.",
+                "points": 10
+            }
+        ]
+    }
+    ]
+}

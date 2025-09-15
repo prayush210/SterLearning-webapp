@@ -1,0 +1,64 @@
+{
+  "name": "Understanding Rent and Utilities",
+  "description": "This quiz tests your knowledge on what is typically included in utilities, how much of your income should be allocated to rent, and ways to save money on bills.",
+  "pathway": "BUDGET",
+  "sections": [
+    { "info": [
+      {
+    "type": "Information",
+    "title": "Understanding Utilities in Budgeting",
+    "position": 1,
+    "content": "When budgeting for bills, the term 'utilities' typically includes electricity, gas, and water bills. These are essential services needed for daily living and are separate from other expenses like rent or mortgage payments, internet and phone bills, or car insurance payments."
+},
+      {
+    "type": "Information",
+    "title": "Guidelines for Rent Expense in Budgeting",
+    "position": 3,
+    "content": "To ensure you're not overspending on rent, experts recommend that your monthly rent should be no more than 30% of your monthly income. Adhering to this guideline helps individuals maintain a healthy balance between their housing expenses and other financial obligations, reducing the risk of financial strain or instability."
+},
+      {
+    "type": "Information",
+    "title": "Benefit of Comparing Prices and Seeking Discounts",
+    "position": 5,
+    "content": "Comparing prices and looking for discounts before making purchases can help you save money on your bills. By actively seeking cost-effective options and taking advantage of discounts, individuals can reduce their overall expenses and allocate their funds more efficiently towards essential and discretionary spending."
+}
+    ]
+
+    },
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What is typically included in the term 'utilities' when budgeting for bills?",
+          "options": [
+            "Internet and phone bills",
+            "Rent and mortgage payments",
+            "Electricity, gas, and water bills",
+            "Car insurance payments"
+          ],
+          "correct_option": "Electricity, gas, and water bills",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "To ensure you're not overspending on rent, experts recommend that your monthly rent should be no more than _________ of your monthly income.",
+          "before": "To ensure you're not overspending on rent, experts recommend that your monthly rent should be no more than ",
+          "blank": "30%",
+          "after": " of your monthly income.",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Comparing prices and looking for discounts before making purchases can help you _________ on your bills.",
+          "before": "Comparing prices and looking for discounts before making purchases can help you ",
+          "blank": "save money",
+          "after": " on your bills.",
+          "points": 20,
+          "position": 6
+        }
+      ]
+    }
+  ]
+}

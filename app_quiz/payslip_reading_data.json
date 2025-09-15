@@ -1,0 +1,37 @@
+{
+  "name": "Understanding Payslips",
+  "description": "This quiz tests your knowledge on the sections of a payslip, the definition of net pay, and the legal requirements for providing payslips.",
+  "pathway": "TAX",
+  "sections": [
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What section of a payslip would typically show deductions for taxes and National Insurance?",
+          "options": ["Gross Pay", "Net Pay", "Deductions", "Benefits"],
+          "correct_option": "Deductions",
+          "points": 10,
+          "position": 1
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "The amount of money you take home after deductions is called your _________ pay.",
+          "before": "The amount of money you take home after deductions is called your ",
+          "blank": "net",
+          "after": " pay.",
+          "points": 15,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Employers are legally required to provide payslips to their employees within _________ days of payday.",
+          "before": "Employers are legally required to provide payslips to their employees within ",
+          "blank": "5",
+          "after": " days of payday.",
+          "points": 20,
+          "position": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Understanding Employment Contracts and Pay Structures",
+  "description": "This quiz tests your knowledge on different types of employment contracts in the UK, the differences between part-time and full-time work, and how overtime pay is calculated.",
+  "pathway": "TAX",
+  "sections": [
+    { "info": [
+      {
+    "type": "Information",
+    "title": "Understanding Zero-Hour Contracts in the UK",
+    "position": 1,
+    "content": "Zero-hour contracts in the UK offer flexibility but no guaranteed hours. Unlike traditional employment contracts, workers on zero-hour contracts are not guaranteed a minimum number of hours per week. While they provide flexibility for both employers and employees, individuals on these contracts may face uncertainty regarding their income and work schedule."
+},
+      {
+    "type": "Information",
+    "title": "Comparison of Part-time and Full-time Employment",
+    "position": 3,
+    "content": "Part-time employees typically work fewer hours per week than full-time employees. While full-time employees typically work a standard number of hours per week, part-time employees work a reduced schedule, often to accommodate other commitments or preferences."
+},
+      {
+    "type": "Information",
+    "title": "Calculation of Overtime Pay",
+    "position": 5,
+    "content": "Overtime pay is typically calculated at a rate of 1.5 times the regular hourly rate. This means that for each hour worked beyond the standard workweek or workday, employees are entitled to receive 1.5 times their usual hourly wage as compensation for the additional hours."
+}
+      ]
+    },
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "Which of the following is true about zero-hour contracts in the UK?",
+          "options": [
+            "They guarantee a fixed number of hours per week.",
+            "They provide the same employment rights as full-time contracts.",
+            "They offer flexibility but no guaranteed hours.",
+            "They are only available to full-time workers."
+          ],
+          "correct_option": "They offer flexibility but no guaranteed hours.",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Part-time employees typically work fewer hours per week than _________ employees.",
+          "before": "Part-time employees typically work fewer hours per week than ",
+          "blank": "full-time",
+          "after": " employees.",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Overtime pay is typically calculated at a rate of _________ times the regular hourly rate.",
+          "before": "Overtime pay is typically calculated at a rate of ",
+          "blank": "1.5",
+          "after": " times the regular hourly rate.",
+          "points": 20,
+          "position": 6
+        }
+      ]
+    }
+  ]
+}

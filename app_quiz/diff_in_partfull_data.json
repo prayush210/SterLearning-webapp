@@ -1,0 +1,42 @@
+{
+  "name": "Understanding Employment Contracts and Pay Structures",
+  "description": "This quiz tests your knowledge on different types of employment contracts in the UK, the differences between part-time and full-time work, and how overtime pay is calculated.",
+  "pathway": "TAX",
+  "sections": [
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "Which of the following is true about zero-hour contracts in the UK?",
+          "options": [
+            "They guarantee a fixed number of hours per week.",
+            "They provide the same employment rights as full-time contracts.",
+            "They offer flexibility but no guaranteed hours.",
+            "They are only available to full-time workers."
+          ],
+          "correct_option": "They offer flexibility but no guaranteed hours.",
+          "points": 10,
+          "position": 1
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Part-time employees typically work fewer hours per week than _________ employees.",
+          "before": "Part-time employees typically work fewer hours per week than ",
+          "blank": "full-time",
+          "after": " employees.",
+          "points": 15,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Overtime pay is typically calculated at a rate of _________ times the regular hourly rate.",
+          "before": "Overtime pay is typically calculated at a rate of ",
+          "blank": "1.5",
+          "after": " times the regular hourly rate.",
+          "points": 20,
+          "position": 3
+        }
+      ]
+    }
+  ]
+}

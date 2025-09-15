@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Pathway</title>
+</head>
+
+<div style="padding: 1rem; margin-left: 100px;">
+{% for quiz in quizzes %}
+{% include 'quiz-card.html' %}
+{% endfor %}
+</div>
+
+{% endblock %}

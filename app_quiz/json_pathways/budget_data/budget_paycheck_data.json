@@ -1,0 +1,65 @@
+{
+  "name": "Budgeting Basics",
+  "description": "This quiz tests your understanding of the purpose of creating a budget, common budgeting methods, and the importance of prioritizing essential expenses.",
+  "pathway": "BUDGET",
+  "sections": [
+    { "info": [
+      {
+    "type": "Information",
+    "title": "Understanding the Purpose of Budgeting",
+    "position": 1,
+    "content": "Creating a budget serves a crucial purpose in financial management. Among the options provided, the correct purpose of creating a budget is to track income and expenses. By doing so, individuals or organizations can effectively monitor their financial inflows and outflows, enabling better decision-making and financial stability."
+},
+      {
+    "type": "Information",
+    "title": "Understanding Common Budgeting Methods",
+    "position": 3,
+    "content": "When it comes to managing finances, a common budgeting method is the zero-based budget. In this approach, you allocate every dollar of your income to specific expense categories, ensuring that your income minus expenses equals zero. This method encourages thorough scrutiny of expenses and prioritizes every spending decision. By assigning a purpose to every dollar earned, individuals gain better control over their finances and can make informed choices about where their money goes."
+      },
+      {
+    "type": "Information",
+    "title": "Understanding Prioritization in Budgeting",
+    "position": 5,
+    "content": "When budgeting, it's important to prioritize essential expenses, such as rent and utilities, before discretionary spending. Essential expenses are those necessary for basic needs and maintaining a standard of living. By ensuring these expenses are covered first, individuals can allocate remaining funds towards discretionary items like entertainment or dining out, without risking financial instability."
+}
+
+    ]
+
+    },
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What is the purpose of creating a budget?",
+          "options": [
+            "To restrict spending",
+            "To track income and expenses",
+            "To eliminate all discretionary spending",
+            "To increase debt"
+          ],
+          "correct_option": "To track income and expenses",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "A common budgeting method is the _________ budget, where you allocate a portion of your income to different expense categories.",
+          "before": "A common budgeting method is the ",
+          "blank": "zero-based",
+          "after": " budget, where you allocate a portion of your income to different expense categories.",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "When budgeting, it's important to prioritize _________ expenses, such as rent and utilities, before discretionary spending.",
+          "before": "When budgeting, it's important to prioritize ",
+          "blank": "essential",
+          "after": " expenses, such as rent and utilities, before discretionary spending.",
+          "points": 20,
+          "position": 6
+        }
+      ]
+    }
+  ]
+}

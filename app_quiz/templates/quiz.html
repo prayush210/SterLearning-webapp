@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+<body id="body">
+    {% block content %}
+    <head>
+        <title>Quiz - {{ quiz.name }}</title>
+        <meta charset="utf-8">
+    </head>
+    
+    <div class="wrapper-pathways">
+        <p id="progress">
+            connecting...
+        </p>
+        <h1 id="quiz-title"></h1>
+        <div id="quiz-background">
+            <form id="quizform">
+            </form>
+            <div id="marks"><div></div></div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+{% block script %}
+<script>
+    let url = `ws://${window.location.host}/ws/quiz-stream`
+        const quizSocket = new WebSocket(url)
+
+        let position = 0; //which quiz section the user is currently in
+        let points = 0; //points earned
+        let correct = 0; //no of questions (mcq, fib) answered correctly
+        let answered = 0; //no of questions ^^ given total
+
+        // initial function for submit button, overwritten on each message recieved
+        window.addEventListener("DOMContentLoaded", (event) => { //do after page loads
+            const form = document.querySelector('form');
+            function handleForm(event) {
+                event.preventDefault(); //stops page from refreshing on submission
+                console.log("submitted");
+            }
+            form.addEventListener('submit', handleForm, true, {once: true});
+        });
+
+        quizSocket.onmessage = function (message) {
+
+            let data = JSON.parse(message.data);
+            console.log('Data: ', data);
+
+            const progress = document.getElementById("progress");
+            const form = document.getElementById("quizform");
+
+            if (data.type == 'connected') {
+                //make submit button appear only after connected
+                const button = document.createElement("input");
+                button.setAttribute('type', 'submit');
+                button.setAttribute('id', 'nextbutton');
+                button.setAttribute('value', 'Start Quiz');
+
+                const title = document.getElementById("quiz-title"); //get the title
+                const titletext = document.createTextNode("{{quiz.name}}"); //make words for title
+                document.getElementById("quizform").appendChild(button); //add button to page
+                title.appendChild(titletext); //put words in title
+
+                progress.innerHTML = "connected"
+                var handleForm = function(event) { //signal for quiz to begin
+                    quizSocket.send(JSON.stringify({
+                        'type': 'start',
+                        'qid': {{quiz.id}}
+                    }));
+                }
+                const form = document.querySelector('form');
+                form.addEventListener('submit', handleForm, {once: true});
+            };
+
+            if (data.type == "validated_mcq_answer") {
+                points += data["awarded"]
+                answered++
+
+                if (data["correct"]) {
+                    correct++;
+                    document.getElementById("marks").appendChild(document.createTextNode("correct! you have earned " + data["awarded"] + " points."))
+                } else {
+                    document.getElementById("marks").appendChild(document.createTextNode("that's not correct. if the quiz included it, here's where the reason would be. try again at the end!"))
+                }
+
+                var handleForm = function(event) {
+                    quizSocket.send(JSON.stringify({
+                        'type': 'next',
+                        'qid': {{quiz.id}},
+                        'position': position
+                    }));
+                }
+                const form = document.querySelector('form');
+                form.addEventListener('submit', handleForm, {once: true});
+
+            }
+
+            if (data.type == "validated_fib_answer") {
+                points += data["awarded"]
+                document.querySelectorAll("#quizform ul li").forEach((item) => { //write incorrect or correct next to each list item
+                    answered++
+                    let inputbox = item.getElementsByTagName("input")[0]
+                    inputbox.disabled = true; //greys out input box but keeps what user wrote inside
+                    if (data["correct"].includes(Number(inputbox.getAttribute("name")))) {
+                        correct++
+                        item.appendChild(document.createTextNode(" correct"))
+                    } else {
+                        item.appendChild(document.createTextNode(" incorrect"))
+                    }
+                })
+
+                var handleForm = function(event) {
+                    quizSocket.send(JSON.stringify({
+                        'type': 'next',
+                        'qid': {{quiz.id}},
+                        'position': position
+                    }));
+                }
+                const form = document.querySelector('form');
+                form.addEventListener('submit', handleForm, {once: true});
+            }
+
+            if(data.type === 'first_section' || data.type === 'next_section') {
+                position++;
+                let b = document.getElementById("nextbutton")
+                let f = document.getElementById("quizform")
+                let m = document.getElementById("marks")
+
+                //remove previous question contents
+                while (f.firstChild != b) {
+                    f.removeChild(f.firstChild)
+                }
+                while (m.firstChild) {
+                    m.removeChild(m.firstChild)
+                }
+
+                //change button from start to continue
+                b.setAttribute("value", "Continue");
+
+                //set title of question part
+                document.getElementById("quiz-title").replaceChildren(document.createTextNode(data.section.title));
+
+
+                // var fm = document.querySelector('form');
+                f.removeEventListener('submit', handleForm)
+
+                switch(data.section_type) {
+                    case 'inf':
+                        //adds paragraph with information contents to form
+                        document.getElementById("quizform").insertBefore(document.createElement("p").appendChild(document.createTextNode(data.section.content + '\n')), b);
+                        var handleForm = function(event) {
+                            quizSocket.send(JSON.stringify({ //button moves to next question
+                                'type':'next',
+                                'qid': {{ quiz.id }},
+                                'position': data.section.position
+                            }))
+                        }  
+                        break;
+
+                    case 'mcq':
+                        //make a list for options
+                        var ul = document.createElement("ul")
+
+                        data.section.options.forEach((item) =>{
+                            var li = document.createElement("li")
+
+                            //make radio button
+                            let option = document.createElement("input")
+                            option.setAttribute("type", "radio")
+                            option.setAttribute("name", "options")
+                            option.setAttribute("id", item.id)
+                            option.setAttribute("value", item.id)
+
+                            //make text label for radio button
+                            let label = document.createElement("label")
+                            label.appendChild(option)
+                            label.appendChild(document.createTextNode(item.text))
+
+                            //add button to list
+                            li.appendChild(label)
+                            ul.appendChild(li)
+                        })
+
+                        //add whole list to form
+                        f.insertBefore(ul, b)
+
+                        var handleForm = function(event) { //send selected option to server, which returns with marks
+                            answer = Object.fromEntries(new FormData(f).entries());
+                            // if (answer.options === undefined) {
+                            //     console.log("no choices made")
+                            //     window.alert("pls choose one :(")
+                            // } else {
+                                quizSocket.send(JSON.stringify({
+                                    'type': 'answer',
+                                    'section_type': 'mcq',
+                                    'question_id': data.section.sid,
+                                    'selected_id': answer.options
+                                }))
+                            // }
+                        }     
+                        break;
+
+                    case 'fib':
+                        //make list of sentences
+                        var ul = document.createElement("ul")
+
+                        data.section.sentences.forEach((sentence) => {
+                            //create list item for sentence
+                            var li = document.createElement("li")
+
+                            let textbox = document.createElement("input")
+                            textbox.setAttribute("name", sentence.id)
+                            // textbox.setAttribute("placeholder", "enter answer") //prompt in text box when empty
+                            textbox.setAttribute("id", sentence.id)
+                            
+                            //build list item as "text before - blank space - text after"
+                            if (sentence.before != null) li.appendChild(document.createTextNode(sentence.before))
+                            li.appendChild(textbox)
+                            if (sentence.after != null) li.appendChild(document.createTextNode(sentence.after))
+
+                            //add sentence to list
+                            ul.appendChild(li)
+                        })
+                        //add list to form
+                        f.insertBefore(ul, b)
+
+                        var handleForm = function(event) {
+                            answer = Object.fromEntries(new FormData(f).entries());
+                            console.log(answer)
+                            let sentences = []
+                            for (var id in answer) { //submit for marking, with id of sentence and what user entered
+                                console.log("id: " + id)
+                                console.log("blank: " + answer[id])
+                                sentences.push(
+                                    {
+                                        "id": Number(id),
+                                        "blank": answer[id]
+                                    }
+                                )
+                            }
+                            quizSocket.send(JSON.stringify({
+                                'type': 'answer',
+                                'section_type': 'fib',
+                                'sentences': sentences
+                            }))
+                        }  
+                        break;
+                }
+                
+                const form = document.querySelector('form'); //for all types of section, use new handling function for submit button
+                form.addEventListener('submit', handleForm, {once: true});
+
+            }
+
+            if (data.type == "end_quiz") {
+                //clear everything from screen, including form
+                document.getElementById("quiz-title").replaceChildren(document.createTextNode("end of quiz"))
+                document.getElementById("quizform").remove()
+
+                //you have reached the end of the quiz! you have earned x points overall
+                let body = document.getElementById("body")
+                document.getElementById("marks").appendChild(document.createTextNode("congrats u have reached the end of the quiz\n"))
+                document.getElementById("marks").appendChild(document.createTextNode("you scored: " + points + " points \n"))
+                //and your accuracy was x%
+                let acc = (correct / answered) * 100
+                document.getElementById("marks").appendChild(document.createTextNode("with accuracy: " + Math.floor(acc) + "%\n"))
+
+                //return home?
+                let home = document.createElement("a")
+                home.setAttribute("href", "{% url 'friend-suggestion' %}")
+                home.appendChild(document.createTextNode("return home"))
+                document.getElementById("marks").appendChild(home)
+            }
+        }
+</script>
+{% endblock %}

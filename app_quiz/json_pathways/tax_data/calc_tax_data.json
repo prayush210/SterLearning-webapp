@@ -1,0 +1,63 @@
+{
+  "name": "Understanding UK Taxation",
+  "description": "This quiz tests your knowledge on the basic rate of income tax in the UK, National Insurance Contributions, and the tax-free personal allowance for the tax year 2024/25.",
+  "pathway": "TAX",
+  "sections": [
+    { "info": [
+      {
+    "type": "Information",
+    "title": "Basic Rate of Income Tax in the UK",
+    "position": 1,
+    "content": "The current basic rate of income tax in the UK is 20%. This rate is applied to taxable income within a certain range, with individuals earning above this threshold subject to higher tax rates on additional income."
+},
+      {
+    "type": "Information",
+    "title": "Understanding National Insurance Contributions",
+    "position": 3,
+    "content": "National Insurance Contributions are deducted from your earnings. These contributions are mandatory payments made by employees, employers, and self-employed individuals to fund various state benefits, including the state pension, healthcare, and unemployment benefits."
+},
+      {
+    "type": "Information",
+    "title": "Tax-Free Personal Allowance in the UK",
+    "position": 5,
+    "content": "The tax-free personal allowance in the UK for the tax year 2024/25 is £12,570. This allowance represents the amount of income an individual can earn before they start paying income tax."
+}
+
+    ]},
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What is the current basic rate of income tax in the UK?",
+          "options": [
+            "15%",
+            "20%",
+            "25%",
+            "30%"
+          ],
+          "correct_option": "20%",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "National Insurance Contributions are deducted from your _________.",
+          "before": "National Insurance Contributions are deducted from your ",
+          "blank": "earnings",
+          "after": ".",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "The tax-free personal allowance in the UK for the tax year 2024/25 is £_________.",
+          "before": "The tax-free personal allowance in the UK for the tax year 2024/25 is £",
+          "blank": "12,570",
+          "after": ".",
+          "points": 20,
+            "position": 6
+        }
+      ]
+    }
+  ]
+}

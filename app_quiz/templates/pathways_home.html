@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Pathways Home</title>
+</head>
+
+<div class ="wrapper-pathways">
+    <!-- <div style="padding: 20px 100px; position: relative; height: 80vh; width: 80%; background-color: green;"> full viewed area -->
+        <div style="position: absolute;" class="wholecircle"> <!-- whole circle -->
+            <a href="taxes/" class="segment red"> <!-- left segment -->
+                <img src="{% static 'pathway/inner-red.png' %}" class="circle inner">
+                <img src="{% static 'pathway/middle-red.png' %}" class="circle middle">
+                <img src="{% static 'pathway/outer-red.png' %}" class="circle outer">
+            </a>
+            <a href="budgeting/" class="segment green"> <!-- right segment -->
+                <img src="{% static 'pathway/inner-green.png' %}" class="circle inner">
+                <img src="{% static 'pathway/middle-green.png' %}" class="circle middle">
+                <img src="{% static 'pathway/outer-green.png' %}" class="circle outer">
+            </a>
+            <a href="pensions/" class="segment blue"> <!-- bottom segment -->
+                <img src="{% static 'pathway/inner-blue.png' %}" class="circle inner">
+                <img src="{% static 'pathway/middle-blue.png' %}" class="circle middle">
+                <img src="{% static 'pathway/outer-blue.png' %}" class="circle outer">
+            </a>
+        </div>
+</div>
+<!-- </div> -->
+{% endblock %}

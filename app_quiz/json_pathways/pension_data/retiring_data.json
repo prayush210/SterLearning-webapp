@@ -1,0 +1,54 @@
+{
+    "name": "Retiring and Using your Pensions",
+    "description": "Information about how you can use the pensions you’ve built up over your working life.",
+    "pathway": "PENSION",
+    "sections": [
+        { "info": [ 
+            {
+            "type": "Information",
+            "title": "Taking out your pension",
+            "position": 1,
+            "content": "Each workplace pension will have it’s own age requirement for when you can take it out. This tends to be age 60-65, but can be as early as 55.\n\nYou can choose to take up to 25% of your pension as a sum tax-free, and receive the rest as regular taxed income. This is called annuity, and is a permanent decision - you can’t change your mind and take it out as one sum later on.\n\nAlternatively, you can leave an amount of your pension in savings and take it out as a sum at a later date. This is called drawdown."
+            }
+        ]},
+        { "questions": [
+            {
+                "type": "Multiple Choice",
+                "question": "What is receiving your pension as regular income called?",
+                "position": 2,
+                "points": 20,
+                "options": [
+                    "Annuity",
+                    "Annual Income",
+                    "Salary"
+                ],
+                "correct_option": "Annuity"
+            },
+            {
+                "type": "Multiple Choice",
+                "question": "True or False: You can change your mind after buying an Annuity.",
+                "position": 3,
+                "points": 20,
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correct_option": "False"
+            },
+            {
+                "type": "Multiple Choice",
+                "question": "What is taking your some of your pension in sums and leaving the rest invested called?",
+                "position": 4,
+                "points": 20,
+                "options": [
+
+                    "Downpayments",
+                    "Drawbacks",
+                    "Drawdown"
+                ],
+                "correct_option": "Drawdown"
+            }
+        ]
+    }
+    ]
+}

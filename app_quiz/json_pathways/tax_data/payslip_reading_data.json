@@ -1,0 +1,58 @@
+{
+  "name": "Understanding Payslips",
+  "description": "This quiz tests your knowledge on the sections of a payslip, the definition of net pay, and the legal requirements for providing payslips.",
+  "pathway": "TAX",
+  "sections": [
+    { "info": [
+      {
+    "type": "Information",
+    "title": "Understanding Payslip Sections",
+    "position": 1,
+    "content": "Deductions is the section of a payslip that would typically show deductions for taxes and National Insurance. This section provides a breakdown of the various deductions withheld from an employee's gross pay to arrive at their net pay, including income tax, National Insurance contributions, and any other applicable deductions."
+},
+      {
+    "type": "Information",
+    "title": "Understanding Net Pay",
+    "position": 3,
+    "content": "The amount of money you take home after deductions is called your net pay. This is the actual amount of money you receive in your paycheck after taxes, National Insurance contributions, and any other deductions have been withheld."
+},
+      {
+    "type": "Information",
+    "title": "Legal Requirement for Providing Payslips",
+    "position": 5,
+    "content": "Employers are legally required to provide payslips to their employees within 5 days of payday. Payslips detail the employee's earnings and deductions for the pay period and are essential for ensuring transparency and compliance with employment regulations."
+}
+      ]
+    },
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What section of a payslip would typically show deductions for taxes and National Insurance?",
+          "options": ["Gross Pay", "Net Pay", "Deductions", "Benefits"],
+          "correct_option": "Deductions",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "The amount of money you take home after deductions is called your _________ pay.",
+          "before": "The amount of money you take home after deductions is called your ",
+          "blank": "net",
+          "after": " pay.",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Employers are legally required to provide payslips to their employees within _________ days of payday.",
+          "before": "Employers are legally required to provide payslips to their employees within ",
+          "blank": "5",
+          "after": " days of payday.",
+          "points": 20,
+          "position": 6
+        }
+      ]
+    }
+  ]
+}

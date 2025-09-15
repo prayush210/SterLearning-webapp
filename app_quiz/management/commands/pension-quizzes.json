@@ -1,0 +1,222 @@
+[
+{
+    "name": "What is a pension?",
+    "description": "This quiz will teach you the basics of what a pension is, and why it’s important for your future.",
+    "pathway": "PENSION",
+    "sections": [
+        {
+            "type": "Information",
+            "title": "The basics of pensions",
+            "position": 1,
+            "content": "Pensions are a tax-efficient way of saving money for your future. They’re a saving pot you pay into from your 20s until you stop working, and can be taken out once you retire.\n\nThere are three main types of pension: State, Workplace, and Personal.\nState pensions are paid for by the government, based on your National Insurance contributions.\nWorkplace pensions are set up by your employer when you start working for them.\nPersonal pensions are ones you can choose to open and pay into."
+        },
+        {
+            "type": "FillInBlank",
+            "title": "Who is in charge of each type of pension?",
+            "position": 2,
+            "sentences": [
+                {
+                    "before": "State Pensions are paid by the ",
+                    "blank": "government",
+                    "after": ".",
+                    "points": 10
+                },
+                {
+                    "before": "Workplace Pensions are set up by your",
+                    "blank": "employer",
+                    "after": ".",
+                    "points": 10
+                },
+                {
+                    "before": "",
+                    "blank": "Personal",
+                    "after": " Pensions are ones you choose to open.",
+                    "points": 10
+                }
+            ]
+        },
+        {
+            "type": "Information",
+            "title": "Limits on Pension Payments",
+            "position": 3,
+            "content": "The government sets limits on the amounts of money put in and taken out of your pensions.\n\nFor the 2024/25 tax year, you can pay £60,000 in total to your pensions tax-free. You can accumulate up to £1,073,100 across pensions without paying tax on these savings."
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "What is the pension annual allowance (in 2024)?",
+            "position": 4,
+            "points": 20,
+            "options": [
+                {
+                    "text": "£40,000",
+                    "correct": false, 
+                },
+                {
+                    "text": "£60,000",
+                    "correct": true, 
+                },
+                {
+                    "text": "£80,000",
+                    "correct": false, 
+                }
+            ]
+        }
+    ]
+},
+{
+    "name": "State, Workplace, and Personal Pensions",
+    "description": "Further information about the different types of pensions available, and how they work.",
+    "pathway": "PENSION",
+    "sections": [
+        {
+            "type": "Information",
+            "title": "State Pensions",
+            "position": 1,
+            "content": "State pensions are available to be taken out at age 66, for both men and women. They are paid to you by the government, based on the how long you’ve been contributing to National Insurance.\n\nTo gain the full amount, you need to have been paying National Insurance for 35 years. If you have been paying for 10-34 years, you will receive a fraction of the full amount based on the number of years."
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "How old do you have to be to take out your State Pension?",
+            "position": 2,
+            "points": 10,
+            "options": [
+                {
+                    "text": "64",
+                    "correct": false, 
+                },
+                {
+                    "text": "65",
+                    "correct": false, 
+                },
+                {
+                    "text": "66",
+                    "correct": true, 
+                },
+                {
+                    "text": "67",
+                    "correct": false, 
+                }
+            ]
+        },
+        {
+            "type": "Information",
+            "title": "Workplace Pensions",
+            "position": 3,
+            "content": "Every time you start a new job, as long as you are over 22 and earning more than £10,000 per year, your employer will open a new pension for you.\n\nYour employer will set a percentage of your salary to be paid straight into the pension. They will also either match this amount, or a percentage of it, to also be paid in. You can usually discuss and set this amount with your employer."
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "Where does the money paid into your workplace pension come from?",
+            "position": 4,
+            "points": 10,
+            "options": [
+                {
+                    "text": "Your salary",
+                    "correct": false, 
+                },
+                {
+                    "text": "Your employer",
+                    "correct": false, 
+                },
+                {
+                    "text": "Both",
+                    "correct": true, 
+                }
+            ]
+        },
+        {
+            "type": "Information",
+            "title": "Personal Pensions",
+            "position": 5,
+            "content": "You can also open your own pension separately from the government or your employer, and choose how much you pay in + how often. \n\nThey are useful for people who are self-employed, or who want to consolidate multiple workplace pensions into one"
+        },
+        {
+            "type": "FillInBlank",
+            "title": "Why are personal pensions useful?",
+            "position": 6,
+            "sentences": [
+                {
+                    "before": "For people who are ",
+                    "blank": "self-employed",
+                    "after": ".",
+                    "points": 10
+                },
+                {
+                    "before": "For combining multiple ",
+                    "blank": "workplace",
+                    "after": " pensions.",
+                    "points": 10
+                }
+            ]
+        }
+    ]
+}, 
+{
+    "name": "Retiring & Using your Pensions",
+    "description": "Information about how you can use the pensions you’ve built up over your working life.",
+    "pathway": "PENSION",
+    "sections": [
+        {
+            "type": "Information",
+            "title": "Taking out your pension",
+            "position": 1,
+            "content": "Each workplace pension will have it’s own age requirement for when you can take it out. This tends to be age 60-65, but can be as early as 55.\n\nYou can choose to take up to 25% of your pension as a sum tax-free, and receive the rest as regular taxed income. This is called annuity, and is a permanent decision - you can’t change your mind and take it out as one sum later on.\n\nAlternatively, you can leave an amount of your pension in savings and take it out as a sum at a later date. This is called drawdown."
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "What is receiving your pension as regular income called?",
+            "position": 2,
+            "points": 20,
+            "options": [
+                {
+                    "text": "Annuity",
+                    "correct": true, 
+                },
+                {
+                    "text": "Annual Income",
+                    "correct": false, 
+                },
+                {
+                    "text": "Salary",
+                    "correct": false, 
+                }
+            ]
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "True or False: You can change your mind after buying an Annuity.",
+            "position": 3,
+            "points": 20,
+            "options": [
+                {
+                    "text": "True",
+                    "correct": false, 
+                },
+                {
+                    "text": "False",
+                    "correct": true, 
+                }
+            ]
+        },
+        {
+            "type": "MultipleChoice",
+            "title": "What is taking your some of your pension in sums and leaving the rest invested called?",
+            "position": 4,
+            "points": ,
+            "options": [
+                {
+                    "text": "Downpayments",
+                    "correct": false, 
+                },
+                {
+                    "text": "Drawbacks",
+                    "correct": false, 
+                },
+                {
+                    "text": "Drawdown",
+                    "correct": true, 
+                }
+            ]
+        }
+    ]
+}]

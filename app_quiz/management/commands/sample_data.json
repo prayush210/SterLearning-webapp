@@ -1,0 +1,42 @@
+{
+  "quizzes": [
+    {
+      "name": "Sample Quiz",
+      "description": "This is a sample quiz",
+      "pathway": "LOANS",
+      "sections": [
+        {
+          "type": "MultipleChoice",
+          "title": "MCQ 1",
+          "position": 1,
+          "points": 10,
+          "options": [
+            {
+              "text": "Option 1 for MCQ 1",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "FillInBlank",
+          "title": "FIB 1",
+          "position": 2,
+          "sentences": [
+            {
+              "before": "This is ",
+              "blank": "sample",
+              "after": " sentence.",
+              "points": 5
+            }
+          ]
+        },
+        {
+          "type": "Information",
+          "title": "Info 1",
+          "position": 3,
+          "content": "This is some information for the quiz."
+        }
+      ]
+    }
+  ]
+}

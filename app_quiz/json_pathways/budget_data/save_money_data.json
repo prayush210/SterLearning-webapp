@@ -1,0 +1,63 @@
+{
+  "name": "Money Saving Strategies",
+  "description": "This quiz tests your knowledge on common methods for saving money on groceries, the importance of an emergency account, and the impact of cutting down on discretionary expenses.",
+  "pathway": "BUDGET",
+  "sections": [
+    { "info": [
+        {
+    "type": "Information",
+    "title": "Effective Grocery Shopping Strategies",
+    "position": 1,
+    "content": "A common method for saving money on groceries is buying in bulk and using coupons. This approach allows individuals to purchase items at a lower unit cost and take advantage of discounts offered through coupons. Conversely, always buying brand name products or shopping without a list can lead to unnecessary expenses. Eating out frequently may also strain the budget due to higher costs associated with restaurant meals."
+},
+      {
+    "type": "Information",
+    "title": "The Importance of an Emergency Fund",
+    "position": 3,
+    "content": "Setting up an emergency account can help you save money for unexpected expenses. An emergency fund provides financial security by allowing individuals to cover unexpected costs, such as car repairs or medical bills, without resorting to high-interest debt or depleting other savings."
+},
+      {
+    "type": "Information",
+    "title": "Impact of Cutting Down Discretionary Expenses",
+    "position": 5,
+    "content": "Cutting down on discretionary expenses, like dining out and entertainment, can significantly impact your savings. These non-essential expenditures often represent opportunities for saving money that can be redirected towards savings goals or essential expenses, leading to greater financial stability in the long term."
+}
+      ]
+    },
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "Which of the following is a common method for saving money on groceries?",
+          "options": [
+            "Always buying brand name products",
+            "Shopping without a list",
+            "Buying in bulk and using coupons",
+            "Eating out frequently"
+          ],
+          "correct_option": "Buying in bulk and using coupons",
+          "points": 10,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Setting up a _________ account can help you save money for unexpected expenses.",
+          "before": "Setting up a ",
+          "blank": "emergency",
+          "after": " account can help you save money for unexpected expenses.",
+          "points": 15,
+          "position": 4
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Cutting down on _________ expenses, like dining out and entertainment, can significantly impact your savings.",
+          "before": "Cutting down on ",
+          "blank": "discretionary",
+          "after": " expenses, like dining out and entertainment, can significantly impact your savings.",
+          "points": 20,
+          "position": 6
+        }
+      ]
+    }
+  ]
+}

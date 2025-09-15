@@ -1,0 +1,42 @@
+{
+  "name": "Money Saving Strategies",
+  "description": "This quiz tests your knowledge on common methods for saving money on groceries, the importance of an emergency account, and the impact of cutting down on discretionary expenses.",
+  "pathway": "BUDGET",
+  "sections": [
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "Which of the following is a common method for saving money on groceries?",
+          "options": [
+            "Always buying brand name products",
+            "Shopping without a list",
+            "Buying in bulk and using coupons",
+            "Eating out frequently"
+          ],
+          "correct_option": "Buying in bulk and using coupons",
+          "points": 10,
+          "position": 1
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Setting up a _________ account can help you save money for unexpected expenses.",
+          "before": "Setting up a ",
+          "blank": "emergency",
+          "after": " account can help you save money for unexpected expenses.",
+          "points": 15,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Cutting down on _________ expenses, like dining out and entertainment, can significantly impact your savings.",
+          "before": "Cutting down on ",
+          "blank": "discretionary",
+          "after": " expenses, like dining out and entertainment, can significantly impact your savings.",
+          "points": 20,
+          "position": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+    "name": "What is a pension?",
+    "description": "This quiz will teach you the basics of what a pension is, and why it’s important for your future.",
+    "pathway": "PENSION",
+    "sections": [
+        { "info": [
+            {
+                "type": "Information",
+                "title": "The basics of pensions",
+                "position": 1,
+                "content": "Pensions are a tax-efficient way of saving money for your future. They’re a saving pot you pay into from your 20s until you stop working, and can be taken out once you retire.\n\nThere are three main types of pension: State, Workplace, and Personal.\nState pensions are paid for by the government, based on your National Insurance contributions.\nWorkplace pensions are set up by your employer when you start working for them.\nPersonal pensions are ones you can choose to open and pay into."
+            },
+            {
+                "type": "Information",
+                "title": "Limits on Pension Payments",
+                "position": 5,
+                "content": "The government sets limits on the amounts of money put in and taken out of your pensions.\n\nFor the 2024/25 tax year, you can pay £60,000 in total to your pensions tax-free. You can accumulate up to £1,073,100 across pensions without paying tax on these savings."
+            }
+        ]},
+        { "questions" : [
+            {
+                "type": "Fill in the Blank",
+                "question": "Who is in charge of state pensions?",
+                "position": 2,
+                "before": "State Pensions are paid by the ",
+                "blank": "government",
+                "after": ".",
+                "points": 10
+            },
+            {
+                "type": "Fill in the Blank",
+                "question": "Who is in charge of each type of pension?",
+                "position": 3,
+                "before": "Workplace Pensions are set up by your",
+                "blank": "employer",
+                "after": ".",
+                "points": 10
+
+            },
+            {
+                "type": "Fill in the Blank",
+                "question": "Who is in charge of each type of pension?",
+                "position": 4,
+                "before": "",
+                "blank": "Personal",
+                "after": " Pensions are ones you choose to open.",
+                "points": 10
+
+            },
+            {
+                "type": "Multiple Choice",
+                "question": "What is the pension annual allowance (in 2024)?",
+                "position": 6,
+                "points": 20,
+                "options": [
+                    
+                    "£40,000",
+                    "£60,000",
+                    "£80,000"
+
+                ],
+                "correct_option": "£60,000"
+            }
+        ]
+    }
+    ]
+}

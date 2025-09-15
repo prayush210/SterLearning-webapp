@@ -1,0 +1,42 @@
+{
+  "name": "Understanding Rent and Utilities",
+  "description": "This quiz tests your knowledge on what is typically included in utilities, how much of your income should be allocated to rent, and ways to save money on bills.",
+  "pathway": "BUDGET",
+  "sections": [
+    {
+      "questions": [
+        {
+          "type": "Multiple Choice",
+          "question": "What is typically included in the term 'utilities' when budgeting for bills?",
+          "options": [
+            "Internet and phone bills",
+            "Rent and mortgage payments",
+            "Electricity, gas, and water bills",
+            "Car insurance payments"
+          ],
+          "correct_option": "Electricity, gas, and water bills",
+          "points": 10,
+          "position": 1
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "To ensure you're not overspending on rent, experts recommend that your monthly rent should be no more than _________ of your monthly income.",
+          "before": "To ensure you're not overspending on rent, experts recommend that your monthly rent should be no more than ",
+          "blank": "30%",
+          "after": " of your monthly income.",
+          "points": 15,
+          "position": 2
+        },
+        {
+          "type": "Fill in the Blank",
+          "question": "Comparing prices and looking for discounts before making purchases can help you _________ on your bills.",
+          "before": "Comparing prices and looking for discounts before making purchases can help you ",
+          "blank": "save money",
+          "after": " on your bills.",
+          "points": 20,
+          "position": 3
+        }
+      ]
+    }
+  ]
+}
