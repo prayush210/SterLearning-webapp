@@ -1,0 +1,80 @@
+{% load static %}
+{% load i18n %}
+
+<div class="sidebar" id="sidebar">
+<div style="position: sticky; top: 0">
+        <div class="logo-details">
+        {#        <i class='bx bxl-c-plus-plus icon'></i>   I cant to make it into the graduation icon instead#}
+        <div class="logo_name">SterLearning</div>
+        <i class='bx bx-menu ' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search myIcon'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="{% url 'home' %}">
+                <i class='bx bx-home myIcon'></i>
+                <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
+            <a href="{% url 'index' %}">
+                <i class='bx bx-user myIcon'></i>
+                <span class="links_name">Account</span>
+            </a>
+            <span class="tooltip">Account</span>
+        </li>
+        <li>
+            <a href="{% url 'mortgage-calculator' %}">
+                <i class="bi bi-tools"></i>
+                <span class="links_name">Tools</span>
+            </a>
+            <span class="tooltip">Tools</span>
+        </li>
+        <li>
+            <a href="{% url 'pathways-home' %}">
+                <i class='bx bx-edit myIcon'></i>
+                <span class="links_name">Tests</span>
+            </a>
+            <span class="tooltip">Tests</span>
+        </li>
+        <li>
+            <a href="{% url 'shop' %}">
+                <i class='bx bxs-medal myIcon'></i>
+                <span class="links_name">Shop</span>
+            </a>
+            <span class="tooltip">Shop</span>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="profile">
+            <div class="profile-details ">
+                <div class="parent" style="position: relative; top: 0; left: 0;">
+                    {% if user.avatar %}
+                        <img class = "image1" src="{{user.avatar.image.url}}" alt="profileImg" style="position: relative; top: 0; left: 0;">
+                        {% if user.decoration %}
+                            <img class = "image2" src="{{user.decoration.image.url}}" alt="profileImg" style="position: absolute; top: 0px; left: 0px;">
+                        {% endif %}
+                        
+                    {% else %}
+                        <img src="{% static 'person-fill.svg' %}" alt="profileImg" style="filter: invert()">
+                    {% endif %}
+                </div>
+                <div class="name_job">
+                    <div class="name">{{ user.username }}</div>
+                    <div class="job">Student</div>
+                </div>
+            </div>
+            <a href = "{% url 'logout' %}">
+                <i class='bx bx-log-out' id="log_out"></i>
+            </a>
+        </li>
+        <li>{% include 'notification_button.html' %}</li>
+        {% endif %}
+    </ul>
+</div>
+
+</div>

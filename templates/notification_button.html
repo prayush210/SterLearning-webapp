@@ -1,0 +1,95 @@
+{% load static %}
+{% load i18n %}
+
+{% if user.is_authenticated %}
+<!--https://medium.com/@devsumitg/revolutionize-your-user-experience-creating-real-time-notifications-with-django-channels-18053b958fb6-->
+<div class="dropdown">
+    <a href="#" data-bs-toggle="dropdown">
+    {% if notifications|length == 0 %}
+    <i id="bellCount" class ="fa-solid fa-bell" data-count="0" ></i>
+    <span class="links_name">Notifications</span>
+    {% else %}
+    <i id="bellCount" class="fa-solid fa-bell" data-count={{notifications|length}} ></i>
+    <span class="links_name">Notifications</span>
+    {% endif %}
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark  text-wrap" id="notify" style="width: 30px !important;">
+        {% for notification in notifications %}
+        <li> <a class="dropdown-item text-wrap" href="{% url 'notification' notification.id %}">{{notification.message}}</a> </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+    // setup chat scoket
+    const notifyScoket = new WebSocket(
+        'ws://'
+        + window.location.host
+        + '/ws/notify/'
+    );
+
+    // on socket open
+    notifyScoket.onopen = function (e) {
+        console.log('Socket successfully connected.');
+    };
+
+    // on socket close
+    notifyScoket.onclose = function (e) {
+        console.log('Socket closed unexpectedly');
+    };
+
+    // on receiving message on group
+    notifyScoket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+        const message = data.message;
+        const id = data.id;
+        const target = data.target
+        // Call the setMessage function to add the new li element
+        if ({{user.id}} == target){
+            setMessage(message, id);
+        }
+
+    };
+
+    function setMessage(message, id) {
+        // Create a new li element
+        var newLi = document.createElement('li');
+
+        // Create a new anchor element
+        var newForm = document.createElement('form');
+        newForm.className = 'dropdown-item text-wrap';
+        newForm.method = "GET";
+        newForm.action = "{% url 'notification-socket' %}";
+        
+
+        var newInput = document.createElement('input');
+        newInput.type = "hidden";
+        newInput.name = "notification";
+        newInput.value = id;
+
+        var newAnchor = document.createElement('button');
+        newAnchor.type = "submit";
+        newAnchor.class="dropdown-item text-wrap"
+        newAnchor.textContent = message;
+
+        newForm.appendChild(newInput);
+        newForm.append(newAnchor);
+
+        // Append the anchor element to the li element
+        newLi.appendChild(newForm);
+
+        // Get the ul element with the id "notify"
+        var ulElement = document.getElementById('notify');
+
+        // Append the new li element to the ul element
+        ulElement.appendChild(newLi);
+
+        // getting object of count
+        count = document.getElementById('bellCount').getAttribute('data-count');
+        document.getElementById('bellCount').setAttribute('data-count', parseInt(count) + 1);
+    }
+
+</script>
+
+
+{% endif %}
